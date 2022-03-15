@@ -1,0 +1,32 @@
+{% block title %}
+<h1>My Memo</h1>
+{% endblock title %}
+
+
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    
+    <label for='id_title'>
+        <input type="text" id='id_title' name="title" maxlength="100"></label></br>
+    <label for='id_description'>
+        <textarea name="description" id="id_description" cols="50" rows="1"></textarea>
+        </label>
+        
+    <input type="submit" value="Submit">
+</form>
+<h3>Things to do</h3>
+ {%for n in memos %}
+    <h4>{{ n.title}}</h4>
+    <p>{{n.description}}</p>
+    <p>{{n.created}}</p><hr>
+    
+
+{% endfor %}
+
+
+
+{% endblock content %}
