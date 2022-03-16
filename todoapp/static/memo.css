@@ -1,0 +1,89 @@
+
+form{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 100%;
+    justify-content:center;
+    align-items:center;
+
+}
+.formal{
+    width: 500px;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+
+}
+
+input,textarea{
+    width: 100%;
+    resize: none;
+    margin: 0px;
+    padding: auto;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    text-align: center;
+}
+textarea{
+    height: 80px;
+}
+#submit{
+    width: 300px;
+    margin: auto;
+    padding: 10px;
+    height: 50px;
+    background-color: rgb(60,60,60);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: 0.2s
+
+}
+#submit:hover{
+    background: white;
+    color:rgb(60,60,60);
+    border: 1px solid rgb(60,60,60);
+    transition: 0.2s;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#date{
+    float: right;
+    position: static;
+
+    left: 150px;
+    font-size: 10px;
+    size: 10px;
+
+}
+
+#done{
+    color: rgb(4, 248, 4);
+}
+#notdone{
+    color: red;
+}
+
+
+
+.ad{
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.description h4{
+    font-size: 20px;
+    margin: 2px;
+}

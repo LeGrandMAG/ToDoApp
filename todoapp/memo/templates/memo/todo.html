@@ -1,28 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block link %}
+<link rel="stylesheet" href="{%static 'memo.css'%}">
+{% endblock link%}
 {% block title %}
-<h1>My Memo</h1>
+TodoApp | for the dummies
 {% endblock title %}
 
 
 
 {% block content %}
-
+<div class="formal">
 <form action="" method="post">
     {% csrf_token %}
 
     
     <label for='id_title'>
-        <input type="text" id='id_title' name="title" maxlength="100"></label></br>
+        <input type="text" id='id_title' name="title" placeholder="title" required></label>
     <label for='id_description'>
-        <textarea name="description" id="id_description" cols="50" rows="1"></textarea>
+        <textarea name="description" id="id_description" cols="60" rows="1" placeholder="description"></textarea>
         </label>
         
-    <input type="submit" value="Submit">
+    <input type="submit"  id="submit" value="Submit">
+ </div>
 </form>
-<h3>Things to do</h3>
  {%for n in memos %}
-    <h4>{{ n.title}}</h4>
+    
+    <div class="description">
+        <h4>{{ n.title}}</h4>
+
+        <div class="ad">
+            <p id="date">{{n.created|timesince}} ago</p>
+        {%if n.completed %}
+            <p id="done"> ✅</p>
+        {%else%}
+            <p id="notdone">❌</p>
+        {%endif%}
+        <!--<form action="" method="post">
+            {% csrf_token %}
+            <input class="delete" type="submit" name ='object' value="object" />
+        </form>-->
+        </div>
+    </div>
     <p>{{n.description}}</p>
-    <p>{{n.created}}</p><hr>
+    <hr>
+    
     
 
 {% endfor %}

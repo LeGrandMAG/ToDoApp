@@ -25,3 +25,10 @@ def MemoView(request):
     return render(request, 'memo/todo.html', {'memos':memos})
     
     
+def deleteMemo(request, pk):
+    bye = Memo.objects.get(id = pk)
+
+    if request.method == 'POST':
+        bye.delete()
+        return redirect('/todo/')
+    return render(request, 'memo/todo.html', {'object': bye})

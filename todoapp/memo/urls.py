@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.DisplayMemo, name = 'display_memo'),
-    path('memo/', views.MemoView, name='memo_view')
+    path('memo/', views.MemoView, name='memo_view'),
+    path('delete/<str:pk>', views.deleteMemo, name='delete')
 ]

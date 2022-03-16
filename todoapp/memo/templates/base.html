@@ -1,14 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {%block link %}{% endblock link%}
     <title>{%block title %} Base {% endblock title %} </title>
 </head>
 <body>
+    <div class="title">
+        <h1>To do App for Dummies!</h1>
+
+    </div>
+    <div class="content">
     {% block content %}
     {% endblock content %}
+    </div>
     
 </body>
 </html>
