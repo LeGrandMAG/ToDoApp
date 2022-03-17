@@ -23,13 +23,20 @@ TodoApp | for the dummies
         </label>
         
     <input type="submit"  id="submit" value="Submit">
- </div>
+ 
 </form>
+</div>
  {%for n in memos %}
     
+ <div class="de">
     <div class="description">
         <h4>{{ n.title}}</h4>
-
+        <a href="{% url 'delete-memo' n.id %}"><button>Delete</button></a>
+        
+        
+    </div>
+    <div class="descriptus">
+        <p>{{n.description}}</p>
         <div class="ad">
             <p id="date">{{n.created|timesince}} ago</p>
         {%if n.completed %}
@@ -37,15 +44,12 @@ TodoApp | for the dummies
         {%else%}
             <p id="notdone">❌</p>
         {%endif%}
-        <!--<form action="" method="post">
-            {% csrf_token %}
-            <input class="delete" type="submit" name ='object' value="object" />
-        </form>-->
+        
         </div>
+        
     </div>
-    <p>{{n.description}}</p>
     <hr>
-    
+</div>
     
 
 {% endfor %}

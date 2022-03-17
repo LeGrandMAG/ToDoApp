@@ -8,12 +8,13 @@ form{
 
 }
 .formal{
-    width: 500px;
+    width: 600px;
     height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     color: blue;
+
 
 }
 
@@ -33,7 +34,7 @@ textarea{
     height: 80px;
 }
 #submit{
-    width: 300px;
+    width: 400px;
     margin: auto;
     padding: 10px;
     height: 50px;
@@ -51,17 +52,10 @@ textarea{
     transition: 0.2s;
 }
 
-.description{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 #date{
     float: right;
     position: static;
 
-    left: 150px;
     font-size: 10px;
     size: 10px;
 
@@ -79,11 +73,50 @@ textarea{
 .ad{
     width: 100px;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
 
+}
+.de{
+    width: 600px;
 }
 .description h4{
     font-size: 20px;
     margin: 2px;
 }
+.description{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.descriptus{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.descriptus p{
+    height: fit-content;
+}
+
+.de form{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+
+    width: fit-content;
+    
+}
+#delete-button{
+    font-size: 10px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}
+

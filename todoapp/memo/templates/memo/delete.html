@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%load static%}
+{% block link%}
+<link rel="stylesheet" href="{% static '/delete.css' %}">
+{%endblock link %}
+{%block title %}
+Delete Page
+{%endblock title%}
+
+{%block content%}
+
+
+<form class="form" action="" method="post">
+    {% csrf_token %}
+    <p>Are you sure you want to delete <b>{{object}}</b> ?</p>
+    <div class="button">
+        <input id="delete=button" class="delete" type="submit" name ='object' value="delete" />
+    <a href="{% url 'display_memo' %}"><button>Abort</button></a>
+    </div>
+    
+</form>
+{%endblock content%}

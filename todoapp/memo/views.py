@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .forms import MemoForm
+from .forms import MemoForm, DeleteForm
 from .models import Memo 
 from django.shortcuts import render, get_object_or_404
 # Create your views here.
@@ -14,7 +14,7 @@ def DisplayMemo(request):
             description = request.POST['description']
             completed = True
             memo = Memo.objects.create(title=title, description=description,completed=completed)
-            return redirect('/todo/')
+            return redirect('/')
     else:
         form = MemoForm()
     context = {'form':form, 'memos':memos }
@@ -28,7 +28,13 @@ def MemoView(request):
 def deleteMemo(request, pk):
     bye = Memo.objects.get(id = pk)
 
-    if request.method == 'POST':
-        bye.delete()
-        return redirect('/todo/')
-    return render(request, 'memo/todo.html', {'object': bye})
+    if request.method == 'GET':
+
+        form = DeleteForm(request.POST)
+        if form.is_valid():
+                bye.delete()
+                return redirect('/')
+    else:
+        return redirect('/')
+
+    return render(request, 'memo/delete.html', {'object': bye})
